@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forklift Daily Inspection Register — Taurus Cape Kelp</title>
+    <link rel="stylesheet" href="forklift_checklist.css">
+
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="brand">
+      <div class="brand-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="7" width="20" height="13" rx="2"/>
+          <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/>
+          <line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/>
+        </svg>
+      </div>
+      <div>
+        <div class="brand-name">Taurus Cape Kelp</div>
+        <div class="brand-sub">Safety Register</div>
+      </div>
+    </div>
+    <div class="doc-title">Forklift Daily Inspection Register</div>
+  </div>
+
+  <div class="alert-banner">
+    &#9888; Items in <strong>BOLD / CRITICAL</strong> — if defective the forklift <strong>MAY NOT</strong> leave the premises until the defect is corrected and the checklist is signed by the Transport Manager or Supervisor.
+    Write <strong>OK</strong> or <strong>DEF</strong> in each day column.
+  </div>
+
+  <div class="week-nav">
+    <label>Week from</label>
+    <input type="date" id="weekFrom">
+    <label>Driver</label>
+    <input type="text" id="driverName" placeholder="Driver name">
+  </div>
+
+  <!-- Speedo / Fuel / Time log per day -->
+  <div class="log-grid" id="logGrid"></div>
+
+  <div class="summary-bar" id="summaryBar"></div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th style="width:280px;">Items to be Checked</th>
+          <th class="th-day">Mon</th><th class="th-day">Tue</th><th class="th-day">Wed</th>
+          <th class="th-day">Thu</th><th class="th-day">Fri</th><th class="th-day">Sat</th><th class="th-day">Sun</th>
+          <th style="width:150px;">Comments</th>
+        </tr>
+      </thead>
+      <tbody id="itemsBody"></tbody>
+    </table>
+  </div>
+
+  <div class="signoff-box">
+    <div class="signoff-title">Weekly Sign-off</div>
+    <div id="signoffForm">
+      <div class="signoff-grid">
+        <div class="signoff-field"><span class="signoff-label">Date of inspection</span><input type="text" id="so-date" placeholder="e.g. 15 Jan 2026"></div>
+        <div class="signoff-field"><span class="signoff-label">Driver signature</span><input type="text" id="so-driver" placeholder="Initials / name"></div>
+        <div class="signoff-field"><span class="signoff-label">Supervisor / Manager</span><input type="text" id="so-manager" placeholder="Initials / name"></div>
+      </div>
+      <div class="signoff-grid" style="margin-bottom:0.75rem;">
+        <div class="signoff-field"><span class="signoff-label">Spot-check / Audit</span><input type="text" id="so-spot" placeholder="Date and initials"></div>
+      </div>
+      <button class="sign-btn" onclick="signOff()">Sign off this week</button>
+    </div>
+    <div id="signedDisplay" style="display:none;align-items:center;gap:12px;flex-wrap:wrap;"></div>
+  </div>
+
+  <div class="bottom-row">
+    <div class="doc-ref">Doc Name: Register-15 &nbsp;|&nbsp; Rev no: 02</div>
+    <button class="print-btn" onclick="window.print()">Print / Save PDF</button>
+  </div>
+</div>
+
+  <script src="forklift_checklist.js"></script>
+
+</body>
+</html>

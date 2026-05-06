@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fleet Daily Inspection Register — Taurus Cape Kelp</title>
+  <link rel="stylesheet" href="vehicle_inspection_checklist_working.css">
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="brand">
+      <div class="brand-icon">
+        <svg viewBox="0 0 24 24"><rect x="1" y="10" width="22" height="10" rx="2"/><path d="M5 10V7a2 2 0 012-2h10a2 2 0 012 2v3"/><circle cx="6.5" cy="20.5" r="1.5"/><circle cx="17.5" cy="20.5" r="1.5"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+      </div>
+      <div>
+        <div class="brand-name">Taurus Cape Kelp</div>
+        <div class="brand-sub">Fleet Safety Register</div>
+      </div>
+    </div>
+    <div class="doc-title">Daily Vehicle Inspection Register</div>
+  </div>
+
+  <!-- Vehicle type tabs + meta -->
+  <div class="vehicle-bar">
+    <div class="vehicle-tabs" id="vehicleTabs"></div>
+    <div class="veh-meta">
+      <span>Reg:</span><input type="text" id="vehReg" placeholder="Registration" style="width:110px">
+      <span>Model:</span><input type="text" id="vehModel" placeholder="Model" style="width:100px">
+      <span>Clock/HR:</span><input type="text" id="vehOdometer" placeholder="km / hr" style="width:80px">
+    </div>
+  </div>
+
+  <!-- Week / driver -->
+  <div class="week-nav">
+    <label>Week from</label>
+    <input type="date" id="weekFrom">
+    <label>Driver</label>
+    <input type="text" id="driverName" placeholder="Driver name">
+  </div>
+
+  <!-- Daily log grid -->
+  <div class="log-grid" id="logGrid"></div>
+
+  <!-- Alert -->
+  <div class="alert-banner">
+    &#9888; Write <strong>OK</strong> (green) or <strong>DEF</strong> (red) in each day cell.
+    Critical items <span class="crit-badge">CRITICAL</span> — if defective the vehicle <strong>MAY NOT</strong> operate until the defect is rectified and signed off by a supervisor.
+  </div>
+
+  <!-- Summary -->
+  <div class="summary-bar" id="summaryBar"></div>
+
+  <!-- Inspection table -->
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th style="width:280px;">Inspection Items</th>
+          <th class="th-day">Mon</th><th class="th-day">Tue</th><th class="th-day">Wed</th>
+          <th class="th-day">Thu</th><th class="th-day">Fri</th><th class="th-day">Sat</th><th class="th-day">Sun</th>
+          <th style="width:155px;">Remarks / Comments</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+  </div>
+
+  <!-- Sign off -->
+  <div class="signoff-box">
+    <div class="signoff-title">Weekly Sign-off</div>
+    <div id="signoffForm">
+      <div class="signoff-grid">
+        <div class="signoff-field"><span class="signoff-label">Date of inspection</span><input type="text" id="so-date" placeholder="e.g. 22 May 2026"></div>
+        <div class="signoff-field"><span class="signoff-label">Driver signature</span><input type="text" id="so-driver" placeholder="Initials / name"></div>
+        <div class="signoff-field"><span class="signoff-label">Supervisor / Manager</span><input type="text" id="so-manager" placeholder="Initials / name"></div>
+        <div class="signoff-field"><span class="signoff-label">Spot-check / Audit</span><input type="text" id="so-spot" placeholder="Date and initials"></div>
+      </div>
+      <button class="sign-btn" onclick="signOff()">Sign off this week</button>
+    </div>
+    <div id="signedDisplay" style="display:none; align-items:center; gap:12px; flex-wrap:wrap;"></div>
+  </div>
+
+  <div class="bottom-row">
+    <div class="doc-ref">Doc: Fleet Register v2 &nbsp;|&nbsp; Rev: 03</div>
+    <button class="print-btn" onclick="window.print()">Print / Save PDF</button>
+  </div>
+</div>
+
+  <script src="vehicle_inspection_checklist_working.js"></script>
+</body>
+</html>

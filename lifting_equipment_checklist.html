@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lifting Equipment Register — Taurus Cape Kelp</title>
+    <link rel="stylesheet" href="lifting_equipment_checklist.css">
+
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="brand">
+      <div class="brand-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+          <circle cx="12" cy="12" r="4"/>
+        </svg>
+      </div>
+      <div>
+        <div class="brand-name">Taurus Cape Kelp</div>
+        <div class="brand-sub">Safety Register</div>
+      </div>
+    </div>
+    <div class="doc-title">Lifting Equipment Register</div>
+  </div>
+
+  <div class="meta-row">
+    <div class="meta-field"><span class="meta-label">Area / Site</span><input type="text" id="meta-area" placeholder="Enter area or site name"></div>
+    <div class="meta-field"><span class="meta-label">Inspector</span><input type="text" id="meta-inspector" placeholder="Inspector name"></div>
+    <div class="meta-field"><span class="meta-label">Year</span><input type="text" id="meta-year" placeholder="2026"></div>
+  </div>
+
+  <div class="legend-toggle-row">
+    <button class="legend-toggle-btn" onclick="toggleLegend()">Show deviation legend</button>
+    <div class="legend-box" id="legendBox">
+      <div class="legend-note">
+        <strong>How to fill in:</strong> Write <strong>OK</strong> if no issues found, or write the deviation number (e.g. <strong>1.3</strong>) if a fault is found.
+        Do not tick. Tag defective equipment as <strong>"Defective"</strong> and report to the person responsible. If beyond repair — destroy and discard; replace immediately.
+      </div>
+      <div class="legend-grid">
+        <div class="legend-section">
+          <h4>Chain Links</h4>
+          <ul>
+            <li>1.1 Twisted, Stretched, Bent</li>
+            <li>1.2 Nicked, Gouged, Cracked</li>
+            <li>1.3 Inter link and side barrel wear</li>
+            <li>1.4 Distorted / Damaged master links</li>
+            <li>1.5 Distorted / Damaged coupling links</li>
+            <li>1.6 Distorted / Damaged attachments</li>
+          </ul>
+        </div>
+        <div class="legend-section">
+          <h4>Hooks</h4>
+          <ul>
+            <li>2.1 Spread in throat opening</li>
+            <li>2.2 Cracked, Nicked, Chafed</li>
+            <li>2.3 Wear on eye</li>
+            <li>2.4 Wear on clevis</li>
+            <li>2.5 Wear on saddle</li>
+            <li>2.6 Wear on load pin</li>
+            <li>2.7 Side bending</li>
+            <li>2.8 Max. mass load (SWL) Marked</li>
+          </ul>
+        </div>
+        <div class="legend-section">
+          <h4>Fibre Ropes</h4>
+          <ul>
+            <li>3.1 Wear / Abrasions</li>
+            <li>3.2 Mechanical damage</li>
+            <li>3.3 Broken, Cut or Powdered Fibres</li>
+            <li>3.4 Displayed yarns or strands</li>
+            <li>3.5 Flattening of strands</li>
+            <li>3.6 Discoloration of Rope</li>
+            <li>3.7 Condition of inner strands</li>
+            <li>3.8 Exposure to Corrosives</li>
+            <li>3.9 Exposure to heat</li>
+          </ul>
+        </div>
+        <div class="legend-section">
+          <h4>Shackles</h4>
+          <ul>
+            <li>4.1 General Condition</li>
+            <li>4.2 Wear on pin or threads</li>
+            <li>4.3 Max. mass load (SWL) Marked</li>
+          </ul>
+        </div>
+        <div class="legend-section">
+          <h4>Steel Wire Ropes</h4>
+          <ul>
+            <li>5.1 Wear / Corrosion</li>
+            <li>5.2 Kinks / Deforming</li>
+            <li>5.3 Fatigue: Square breaks</li>
+            <li>5.4 Drying out of lubrication</li>
+            <li>5.5 Condition of core</li>
+            <li>5.6 Mechanical damage</li>
+            <li>5.7 Fittings — Splices, Rope clamps, Securing of fittings</li>
+          </ul>
+        </div>
+        <div class="legend-section">
+          <h4>Equipment Types</h4>
+          <ul>
+            <li><strong>CL</strong> — Chain Links</li>
+            <li><strong>HK</strong> — Hooks</li>
+            <li><strong>FR</strong> — Fibre Ropes</li>
+            <li><strong>SH</strong> — Shackles</li>
+            <li><strong>SWR</strong> — Steel Wire Ropes</li>
+            <li><strong>OTH</strong> — Other</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="month-tabs-row" id="monthTabs"></div>
+  <div class="summary-bar" id="summaryBar"></div>
+
+  <div class="section-header">
+    <span class="section-title" id="currentMonthLabel">January checklist</span>
+    <button class="add-btn" onclick="addRow()">+ Add item</button>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <colgroup>
+        <col class="col-id"><col class="col-loc"><col class="col-type">
+        <col class="col-res"><col class="col-dev"><col class="col-del">
+      </colgroup>
+      <thead>
+        <tr>
+          <th>ID No.</th>
+          <th>Location</th>
+          <th>Type</th>
+          <th class="th-c">Result</th>
+          <th>Deviation</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="itemsBody"></tbody>
+    </table>
+  </div>
+
+  <div class="signoff-box">
+    <div class="signoff-title" id="signoffTitle">Sign off — January</div>
+    <div id="signoffForm">
+      <div class="signoff-grid">
+        <div class="signoff-field"><span class="signoff-label">Date of inspection</span><input type="text" id="so-date" placeholder="e.g. 15 Jan 2026"></div>
+        <div class="signoff-field"><span class="signoff-label">Inspector initials</span><input type="text" id="so-inspector" placeholder="Initials"></div>
+        <div class="signoff-field"><span class="signoff-label">Spot-check / Audit</span><input type="text" id="so-audit" placeholder="Date &amp; initials"></div>
+      </div>
+      <button class="sign-btn" onclick="signOff()">Sign off this month</button>
+    </div>
+    <div id="signedDisplay" style="display:none;align-items:center;gap:12px;flex-wrap:wrap;"></div>
+  </div>
+
+  <div class="bottom-row">
+    <div class="doc-ref">Doc Name: Register-14 &nbsp;|&nbsp; Rev no: 02</div>
+    <button class="print-btn" onclick="window.print()">Print / Save PDF</button>
+  </div>
+</div>
+
+  <script src="lifting_equipment_checklist.js"></script>
+
+</body>
+</html>

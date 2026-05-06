@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fire Fighting Equipment Register — Taurus Cape Kelp</title>
+  <link rel="stylesheet" href="firefighting_checklist.css">
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="brand">
+      <div class="brand-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2C8 2 5 5 5 9c0 3 1.5 5 3 7l1 3h6l1-3c1.5-2 3-4 3-7 0-4-3-7-7-7z"/>
+          <line x1="9" y1="21" x2="15" y2="21"/>
+          <line x1="12" y1="12" x2="12" y2="16"/>
+          <circle cx="12" cy="10" r="1.5" fill="currentColor" stroke="none"/>
+        </svg>
+      </div>
+      <div>
+        <div class="brand-name">Taurus Cape Kelp</div>
+        <div class="brand-sub">Safety Register</div>
+      </div>
+    </div>
+    <div class="doc-title">Fire Fighting Equipment Register</div>
+  </div>
+
+  <!-- Meta -->
+  <div class="meta-row">
+    <div class="meta-field">
+      <span class="meta-label">Area / Site</span>
+      <input type="text" id="meta-area" placeholder="e.g. Taurus Cape Kelp" value="Taurus Cape Kelp">
+    </div>
+    <div class="meta-field">
+      <span class="meta-label">Inspector</span>
+      <input type="text" id="meta-inspector" placeholder="Inspector name">
+    </div>
+    <div class="meta-field">
+      <span class="meta-label">Year</span>
+      <input type="text" id="meta-year" placeholder="2026" value="2026">
+    </div>
+  </div>
+
+  <!-- Legend toggle -->
+  <div class="legend-toggle-row">
+    <button class="legend-toggle-btn" onclick="toggleLegend()">Show deviation legend</button>
+    <div class="legend-box" id="legendBox">
+      <div class="legend-note">
+        <strong>How to fill in:</strong> Write <strong>OK</strong> if no issues found, or write the deviation number (e.g. <strong>1.3</strong>) if a fault is found.
+        Do not tick. If equipment is defective it must be tagged <strong>"Defective"</strong> and reported to the person responsible for equipment repair.
+      </div>
+      <div class="legend-grid">
+        <div class="legend-section fe">
+          <h4>Fire Extinguisher (FE)</h4>
+          <ul>
+            <li>1.1 No symbolic sign</li>
+            <li>1.2 Equipment wrong position</li>
+            <li>1.3 Hose broken</li>
+            <li>1.4 Breather dirty and obstructed</li>
+            <li>1.5 Corrosion</li>
+            <li>1.6 Leaks visible</li>
+            <li>1.7 Seals broken</li>
+            <li>1.8 Pressure incorrect</li>
+            <li>1.9 Background not painted white and red</li>
+            <li>1.10 No demarcation</li>
+            <li>1.11 Hose trigger broken</li>
+            <li>1.12 Equipment obstruct</li>
+            <li>1.13 Nozzle dirty and blocked</li>
+            <li>1.14 Not numbered</li>
+            <li>1.15 Service overdue</li>
+          </ul>
+        </div>
+        <div class="legend-section fhr">
+          <h4>Fire Hose Reel (FHR)</h4>
+          <ul>
+            <li>2.1 No symbolic sign</li>
+            <li>2.2 Not numbered</li>
+            <li>2.3 Need painting</li>
+            <li>2.4 Damage</li>
+            <li>2.5 Corrosion visible</li>
+            <li>2.6 Leaks visible</li>
+            <li>2.7 Seals broken</li>
+            <li>2.8 O-ring broken</li>
+            <li>2.9 No background painted</li>
+            <li>2.10 No demarcation</li>
+            <li>2.11 Erosion on hose</li>
+            <li>2.12 Guide pulley broken</li>
+            <li>2.13 Valve broken</li>
+            <li>2.14 Spray nozzle broken/missing</li>
+            <li>2.15 No water</li>
+            <li>2.16 Equipment obstructed</li>
+          </ul>
+        </div>
+        <div class="legend-section fh">
+          <h4>Fire Hydrant (FH)</h4>
+          <ul>
+            <li>3.1 No symbolic sign</li>
+            <li>3.2 Not numbered</li>
+            <li>3.3 Need painting</li>
+            <li>3.4 Damage</li>
+            <li>3.5 Corrosion visible</li>
+            <li>3.6 Leaks visible</li>
+            <li>3.7 No background painting</li>
+            <li>3.8 No demarcation</li>
+            <li>3.9 O-ring rubber broken</li>
+            <li>3.10 Valve broken</li>
+            <li>3.11 No plug fitted to mouth</li>
+            <li>3.12 Coupling connector not working</li>
+            <li>3.13 Equipment obstructed</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Month tabs -->
+  <div class="month-tabs-row" id="monthTabs"></div>
+
+  <!-- Summary bar -->
+  <div class="summary-bar" id="summaryBar"></div>
+
+  <!-- Section header -->
+  <div class="section-header">
+    <span class="section-title" id="currentMonthLabel">January checklist</span>
+    <button class="add-btn" onclick="addRow()">+ Add item</button>
+  </div>
+
+  <!-- Table -->
+  <div class="table-wrap">
+    <table>
+      <colgroup>
+        <col class="col-id">
+        <col class="col-loc">
+        <col class="col-type">
+        <col class="col-res">
+        <col class="col-dev">
+        <col class="col-del">
+      </colgroup>
+      <thead>
+        <tr>
+          <th>ID No.</th>
+          <th>Location &amp; Description</th>
+          <th>Type</th>
+          <th style="text-align:center;">Result</th>
+          <th>Deviation</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="itemsBody"></tbody>
+    </table>
+  </div>
+
+  <!-- Sign off -->
+  <div class="signoff-box">
+    <div class="signoff-title" id="signoffTitle">Sign off — January</div>
+    <div id="signoffForm">
+      <div class="signoff-grid">
+        <div class="signoff-field">
+          <span class="signoff-label">Date inspected</span>
+          <input type="text" id="so-date" placeholder="e.g. 15 Jan 2026">
+        </div>
+        <div class="signoff-field">
+          <span class="signoff-label">Inspector signature</span>
+          <input type="text" id="so-inspector" placeholder="Initials / name">
+        </div>
+        <div class="signoff-field">
+          <span class="signoff-label">Manager signature</span>
+          <input type="text" id="so-manager" placeholder="Initials / name">
+        </div>
+      </div>
+      <button class="sign-btn" onclick="signOff()">Sign off this month</button>
+    </div>
+    <div id="signedDisplay" style="display:none; align-items:center; gap:12px; flex-wrap:wrap;"></div>
+  </div>
+
+  <!-- Doc ref + Print -->
+  <div style="display:flex; justify-content:space-between; align-items:center;">
+    <div class="doc-ref">Doc Name: Register-03 &nbsp;|&nbsp; Rev no: 02</div>
+    <div class="print-row">
+      <button class="print-btn" onclick="window.print()">Print / Save PDF</button>
+    </div>
+  </div>
+
+</div>
+
+  <script src="firefighting_checklist.js"></script>
+
+</body>
+</html>

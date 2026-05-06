@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taurus Cape Kelp — Operations Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+<!-- TOP NAV -->
+<nav class="topnav">
+  <div class="topnav-inner">
+    <div class="brand">
+      <div class="brand-logo">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+          <path d="M2 17l10 5 10-5"/>
+          <path d="M2 12l10 5 10-5"/>
+        </svg>
+      </div>
+      <div class="brand-text">
+        <div class="brand-name">Taurus Cape Kelp</div>
+        <div class="brand-sub">Operations Hub</div>
+      </div>
+    </div>
+
+    <div class="search-wrap">
+      <span class="search-icon">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </span>
+      <input
+        type="text"
+        class="search-input"
+        id="searchInput"
+        placeholder="Search registers, checklists…"
+        autocomplete="off"
+        spellcheck="false"
+      >
+      <button class="search-clear" id="searchClear" title="Clear search">✕</button>
+    </div>
+
+    <div class="nav-meta">
+      <span class="nav-date" id="navDate"></span>
+      <span class="nav-badge">9 Registers</span>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE -->
+<main class="page">
+
+  <!-- HERO -->
+  <div class="hero">
+    <h1 class="hero-title">Safety &amp; Operations Registers</h1>
+    <p class="hero-sub">Taurus Cape Kelp — All compliance checklists and inspection registers in one place</p>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats-row">
+    <div class="stat-card total">
+      <div class="stat-label">Total Registers</div>
+      <div class="stat-value">9</div>
+      <div class="stat-sub">Active documents</div>
+    </div>
+    <div class="stat-card safety">
+      <div class="stat-label">Safety</div>
+      <div class="stat-value">3</div>
+      <div class="stat-sub">Fire, First Aid, Hygiene</div>
+    </div>
+    <div class="stat-card equipment">
+      <div class="stat-label">Equipment</div>
+      <div class="stat-value">4</div>
+      <div class="stat-sub">Vehicles, Lifting &amp; More</div>
+    </div>
+    <div class="stat-card facilities">
+      <div class="stat-label">Operations</div>
+      <div class="stat-value">2</div>
+      <div class="stat-sub">Storage &amp; Compressor</div>
+    </div>
+  </div>
+
+  <!-- FILTER BAR -->
+  <div class="filter-bar">
+    <span class="filter-label">Filter</span>
+    <button class="filter-btn active" data-filter="all">
+      All <span class="filter-count">9</span>
+    </button>
+    <button class="filter-btn" data-filter="safety">
+      Safety <span class="filter-count">3</span>
+    </button>
+    <button class="filter-btn" data-filter="equipment">
+      Equipment <span class="filter-count">4</span>
+    </button>
+    <button class="filter-btn" data-filter="facilities">
+      Facilities &amp; Ops <span class="filter-count">2</span>
+    </button>
+  </div>
+
+  <!-- GRID -->
+  <div class="register-grid" id="registerGrid">
+
+    <!-- 1. Vehicle Inspection -->
+    <a class="register-card cat-equipment" data-cat="equipment"
+       data-tags="vehicle fleet truck car inspection daily"
+       data-title="Fleet Daily Inspection Register"
+       data-desc="Daily vehicle inspection, odometer, fuel, defects and sign-off for all fleet vehicles"
+       href="vehicle_inspection_checklist_working.html" target="_blank">
+      <div class="card-body">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v4h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <span class="card-cat-badge">Equipment</span>
+        </div>
+        <div class="card-title">Fleet Daily Inspection Register</div>
+        <div class="card-desc">Daily pre-trip checks covering safety systems, lights, tyres, brakes and fluid levels across all fleet vehicles.</div>
+        <div class="card-tags">
+          <span class="card-tag">Daily</span>
+          <span class="card-tag">Fleet</span>
+          <span class="card-tag">Pre-trip</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="card-open-label">Open Register <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <span class="card-meta-right">VEH-001</span>
+      </div>
+    </a>
+
+    <!-- 2. Forklift -->
+    <a class="register-card cat-equipment" data-cat="equipment"
+       data-tags="forklift fork lift daily inspection equipment"
+       data-title="Forklift Daily Inspection Register"
+       data-desc="Pre-shift forklift safety checks, horn, lights, forks, tyres, fluid levels and operator sign-off"
+       href="forklift_checklist.html" target="_blank">
+      <div class="card-body">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24"><path d="M2 20h20M6 20V10l4-6h8v16"/><path d="M10 4v6h8M6 14h4"/><rect x="14" y="15" width="3" height="5"/></svg>
+          </div>
+          <span class="card-cat-badge">Equipment</span>
+        </div>
+        <div class="card-title">Forklift Daily Inspection Register</div>
+        <div class="card-desc">Pre-operational forklift checks covering forks, mast, tyres, fluid levels, safety devices and operator certification.</div>
+        <div class="card-tags">
+          <span class="card-tag">Pre-shift</span>
+          <span class="card-tag">Forklift</span>
+          <span class="card-tag">Operator</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="card-open-label">Open Register <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <span class="card-meta-right">FLT-001</span>
+      </div>
+    </a>
+
+    <!-- 3. Lifting Equipment -->
+    <a class="register-card cat-equipment" data-cat="equipment"
+       data-tags="lifting equipment crane sling rigging inspection register"
+       data-title="Lifting Equipment Inspection Register"
+       data-desc="Periodic inspection records for all lifting equipment including slings, shackles and hoists"
+       href="lifting_equipment_checklist.html" target="_blank">
+      <div class="card-body">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+          </div>
+          <span class="card-cat-badge">Equipment</span>
+        </div>
+        <div class="card-title">Lifting Equipment Inspection Register</div>
+        <div class="card-desc">Scheduled inspections for lifting gear — slings, shackles, chains, hoists and cranes, with defect recording.</div>
+        <div class="card-tags">
+          <span class="card-tag">Periodic</span>
+          <span class="card-tag">Rigging</span>
+          <span class="card-tag">Certification</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="card-open-label">Open Register <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <span class="card-meta-right">LFT-001</span>
+      </div>
+    </a>
+
+    <!-- 4. Ladders -->
+    <a class="register-card cat-equipment" data-cat="equipment"
+       data-tags="ladders ladder inspection safety stepladder scaffold"
+       data-title="Ladders Inspection Register"
+       data-desc="Ladder condition checks, defect tracking and removal-from-service records for all site ladders"
+       href="ladders_checklist.html" target="_blank">
+      <div class="card-body">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24"><line x1="8" y1="2" x2="8" y2="22"/><line x1="16" y1="2" x2="16" y2="22"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="16" y2="18"/></svg>
+          </div>
+          <span class="card-cat-badge">Equipment</span>
+        </div>
+        <div class="card-title">Ladders Inspection Register</div>
+        <div class="card-desc">Regular inspections of all step ladders and extension ladders — rungs, feet, locking mechanisms, and load ratings.</div>
+        <div class="card-tags">
+          <span class="card-tag">Periodic</span>
+          <span class="card-tag">Access</span>
+          <span class="card-tag">Heights</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="card-open-label">Open Register <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <span class="card-meta-right">LAD-001</span>
+      </div>
+    </a>
+
+    <!-- 5. Firefighting -->
+    <a class="register-card cat-safety" data-cat="safety"
+       data-tags="fire firefighting extinguisher hose emergency safety inspection"
+       data-title="Firefighting Equipment Inspection Register"
+       data-desc="Monthly checks on fire extinguishers, hose reels, blankets and emergency signage across all areas"
+       href="firefighting_checklist.html" target="_blank">
+      <div class="card-body">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 3z"/></svg>
+          </div>
+          <span class="card-cat-badge">Safety</span>
+        </div>
+        <div class="card-title">Firefighting Equipment Register</div>
+        <div class="card-desc">Monthly inspection records for fire extinguishers, hose reels, fire blankets and emergency evacuation signage.</div>
+        <div class="card-tags">
+          <span class="card-tag">Monthly</span>
+          <span class="card-tag">Emergency</span>
+          <span class="card-tag">Fire Safety</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="card-open-label">Open Register <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <span class="card-meta-right">FIRE-001</span>
+      </div>
+    </a>
+
+    <!-- 6. First Aid -->
+    <a class="register-card cat-safety" data-cat="safety"
+       data-tags="first aid kit box contents medical emergency health"
+       data-title="First Aid Box Contents Register"
+       data-desc="Monthly audit of first aid kit contents — stock levels, expiry dates and restocking log"
+       href="firstaid_checklist.html" target="_blank">
+      <div class="card-body">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24"><path d="M8 21h12a2 2 0 002-2v-2H10v2a2 2 0 01-2 2z"/><path d="M19 3H5a2 2 0 00-2 2v12a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2z"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+          </div>
+          <span class="card-cat-badge">Safety</span>
+        </div>
+        <div class="card-title">First Aid Box Contents Register</div>
+        <div class="card-desc">Monthly stock audit for all first aid kits — item quantities, expiry checks and replenishment records.</div>
+        <div class="card-tags">
+          <span class="card-tag">Monthly</span>
+          <span class="card-tag">Medical</span>
+          <span class="card-tag">Stock Audit</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="card-open-label">Open Register <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <span class="card-meta-right">FA-001</span>
+      </div>
+    </a>
+
+    <!-- 7. Hygiene Facilities -->
+    <a class="register-card cat-safety" data-cat="safety"
+       data-tags="hygiene facilities toilets ablutions cleaning sanitation health"
+       data-title="Hygiene Facilities Inspection Register"
+       data-desc="Regular inspections of ablution blocks, hand-washing stations and sanitation facilities"
+       href="hygiene_facilities_checklist.html" target="_blank">
+      <div class="card-body">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24"><path d="M4 12 C4 8 8 4 12 4 S20 8 20 12 16 20 12 20 4 16 4 12z"/><path d="M12 8v4l3 3"/></svg>
+          </div>
+          <span class="card-cat-badge">Safety</span>
+        </div>
+        <div class="card-title">Hygiene Facilities Inspection Register</div>
+        <div class="card-desc">Routine inspections covering ablution blocks, hand-washing stations, soap and paper supply, and cleanliness.</div>
+        <div class="card-tags">
+          <span class="card-tag">Weekly</span>
+          <span class="card-tag">Sanitation</span>
+          <span class="card-tag">Compliance</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="card-open-label">Open Register <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <span class="card-meta-right">HYG-001</span>
+      </div>
+    </a>
+
+    <!-- 8. Stacking Storage -->
+    <a class="register-card cat-facilities" data-cat="facilities"
+       data-tags="stacking storage racking shelving warehouse storage inspection"
+       data-title="Stacking & Storage Inspection Register"
+       data-desc="Periodic inspection of racking, shelving and stacking areas for structural integrity and safe storage"
+       href="stacking_storage_checklist.html" target="_blank">
+      <div class="card-body">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="4" rx="1"/><rect x="2" y="10" width="20" height="4" rx="1"/><rect x="2" y="17" width="20" height="4" rx="1"/></svg>
+          </div>
+          <span class="card-cat-badge">Facilities</span>
+        </div>
+        <div class="card-title">Stacking &amp; Storage Inspection Register</div>
+        <div class="card-desc">Periodic checks of racking systems, shelving integrity, load limits, aisle clearance and stack stability.</div>
+        <div class="card-tags">
+          <span class="card-tag">Periodic</span>
+          <span class="card-tag">Warehouse</span>
+          <span class="card-tag">Racking</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="card-open-label">Open Register <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <span class="card-meta-right">STK-001</span>
+      </div>
+    </a>
+
+    <!-- 9. Compressor -->
+    <a class="register-card cat-facilities" data-cat="facilities"
+       data-tags="compressor air pressure pump inspection maintenance"
+       data-title="Compressor Inspection Register"
+       data-desc="Scheduled inspection and maintenance log for air compressors — pressure, safety valves and oil levels"
+       href="compressor_checklist.html" target="_blank">
+      <div class="card-body">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+          </div>
+          <span class="card-cat-badge">Facilities</span>
+        </div>
+        <div class="card-title">Compressor Inspection Register</div>
+        <div class="card-desc">Regular maintenance checks for air compressors — pressure relief valves, belt tension, oil levels and condensate drainage.</div>
+        <div class="card-tags">
+          <span class="card-tag">Weekly</span>
+          <span class="card-tag">Mechanical</span>
+          <span class="card-tag">Pressure</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="card-open-label">Open Register <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <span class="card-meta-right">CMP-001</span>
+      </div>
+    </a>
+
+    <!-- No results state -->
+    <div class="no-results" id="noResults">
+      <div class="no-results-icon">🔍</div>
+      <div class="no-results-text">No registers found</div>
+      <div class="no-results-sub">Try a different search term or clear the filter</div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="page-footer">
+    <div class="footer-brand">
+      <strong>Taurus Cape Kelp</strong> — Safety &amp; Operations Management System
+    </div>
+    <div class="footer-ref">v1.0 · OPS-HUB · <span id="footerDate"></span></div>
+  </div>
+
+</main>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

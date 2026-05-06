@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Housekeeping – Stacking &amp; Storage Register — Taurus Cape Kelp</title>
+    <link rel="stylesheet" href="stacking_storage_checklist.css">
+
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="brand">
+      <div class="brand-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="7" width="20" height="5" rx="1"/>
+          <rect x="4" y="12" width="16" height="5" rx="1"/>
+          <rect x="6" y="17" width="12" height="4" rx="1"/>
+          <line x1="12" y1="3" x2="12" y2="7"/>
+          <line x1="8" y1="4" x2="8" y2="7"/>
+          <line x1="16" y1="4" x2="16" y2="7"/>
+        </svg>
+      </div>
+      <div>
+        <div class="brand-name">Taurus Cape Kelp</div>
+        <div class="brand-sub">Safety Register</div>
+      </div>
+    </div>
+    <div class="doc-title">Housekeeping — Good Stacking &amp; Storage Register</div>
+  </div>
+
+  <!-- Meta -->
+  <div class="meta-row">
+    <div class="meta-field"><span class="meta-label">Area / Site</span><input type="text" id="meta-area" placeholder="Enter area or site name"></div>
+    <div class="meta-field"><span class="meta-label">Inspector</span><input type="text" id="meta-inspector" placeholder="Inspector name"></div>
+    <div class="meta-field"><span class="meta-label">Year</span><input type="text" id="meta-year" placeholder="2026"></div>
+  </div>
+
+  <!-- Month tabs -->
+  <div class="month-tabs-row" id="monthTabs"></div>
+
+  <!-- Summary -->
+  <div class="summary-bar" id="summaryBar"></div>
+
+  <!-- Section header -->
+  <div class="section-header">
+    <span class="section-title" id="currentMonthLabel">January checklist</span>
+  </div>
+
+  <!-- Table -->
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th style="width:36px;">#</th>
+          <th>Requirement</th>
+          <th class="th-center" style="width:130px;">Result</th>
+          <th style="width:190px;">Notes</th>
+        </tr>
+      </thead>
+      <tbody id="itemsBody"></tbody>
+    </table>
+  </div>
+
+  <!-- Sign off -->
+  <div class="signoff-box">
+    <div class="signoff-title" id="signoffTitle">Sign off — January</div>
+    <div id="signoffForm">
+      <div class="signoff-grid">
+        <div class="signoff-field"><span class="signoff-label">Date of inspection</span><input type="text" id="so-date" placeholder="e.g. 15 Jan 2026"></div>
+        <div class="signoff-field"><span class="signoff-label">Inspector signature</span><input type="text" id="so-inspector" placeholder="Initials / name"></div>
+        <div class="signoff-field"><span class="signoff-label">Spot-check / Audit</span><input type="text" id="so-audit" placeholder="Date and initials"></div>
+      </div>
+      <button class="sign-btn" onclick="signOff()">Sign off this month</button>
+    </div>
+    <div id="signedDisplay" style="display:none; align-items:center; gap:12px; flex-wrap:wrap;"></div>
+  </div>
+
+  <div class="bottom-row">
+    <div class="doc-ref">Doc Name: Register-06 &nbsp;|&nbsp; Rev no: 02</div>
+    <button class="print-btn" onclick="window.print()">Print / Save PDF</button>
+  </div>
+
+</div>
+
+  <script src="stacking_storage_checklist.js"></script>
+
+</body>
+</html>

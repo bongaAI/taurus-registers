@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hygiene Facilities Register — Taurus Cape Kelp</title>
+    <link rel="stylesheet" href="hygiene_facilities_checklist.css">
+
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="brand">
+      <div class="brand-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 9l1-5h16l1 5"/>
+          <path d="M3 9h18v11a1 1 0 01-1 1H4a1 1 0 01-1-1z"/>
+          <path d="M9 9v12"/>
+          <path d="M15 9v12"/>
+          <path d="M12 3v6"/>
+        </svg>
+      </div>
+      <div>
+        <div class="brand-name">Taurus Cape Kelp</div>
+        <div class="brand-sub">Safety Register</div>
+      </div>
+    </div>
+    <div class="doc-title">Hygiene Facilities Register</div>
+  </div>
+
+  <!-- Meta -->
+  <div class="meta-row">
+    <div class="meta-field"><span class="meta-label">Area / Site / Division</span><input type="text" id="meta-area" placeholder="Enter area, site or division"></div>
+    <div class="meta-field"><span class="meta-label">Inspector</span><input type="text" id="meta-inspector" placeholder="Inspector name"></div>
+  </div>
+
+  <div class="date-row">
+    <div class="meta-field"><span class="meta-label">Inspection Date</span><input type="text" id="meta-date" placeholder="e.g. 15 May 2026"></div>
+    <div class="meta-field"><span class="meta-label">Next Inspection Due</span><input type="text" id="meta-next" placeholder="e.g. 15 Jun 2026"></div>
+  </div>
+
+  <!-- Summary -->
+  <div class="summary-bar" id="summaryBar"></div>
+
+  <!-- Legend hint -->
+  <div style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:1rem;font-size:11px;color:var(--text-muted);">
+    <span>Click condition buttons to mark each item:</span>
+    <span style="color:var(--green);font-weight:600;">&#10003; Clean / OK</span>
+    <span style="color:var(--amber);font-weight:600;">&#9679; Dirty</span>
+    <span style="color:var(--coral);font-weight:600;">&#9651; Damaged</span>
+    <span style="color:var(--red);font-weight:600;">&#10005; Missing</span>
+  </div>
+
+  <!-- Table -->
+  <div class="table-wrap">
+    <table>
+      <colgroup>
+        <col class="col-num">
+        <col class="col-check">
+        <col style="width:85px;">
+        <col style="width:85px;">
+        <col style="width:85px;">
+        <col style="width:85px;">
+        <col class="col-comment">
+      </colgroup>
+      <thead>
+        <tr>
+          <th rowspan="2">#</th>
+          <th rowspan="2">Check Item</th>
+          <th colspan="4" style="text-align:center; border-bottom:0.5px solid var(--border-light);">Condition</th>
+          <th rowspan="2">Comments / Action</th>
+        </tr>
+        <tr class="sub-header-row">
+          <th class="th-clean">Clean</th>
+          <th class="th-dirty">Dirty</th>
+          <th class="th-damaged">Damaged</th>
+          <th class="th-missing">Missing</th>
+        </tr>
+      </thead>
+      <tbody id="itemsBody"></tbody>
+    </table>
+  </div>
+
+  <!-- Action & recommendations -->
+  <div class="action-box">
+    <div class="action-title">Action to be taken / Recommendations</div>
+    <textarea id="actionText" placeholder="Describe any actions to be taken or recommendations…"></textarea>
+  </div>
+
+  <!-- Sign off -->
+  <div class="signoff-box">
+    <div class="signoff-title">Signatures</div>
+    <div id="signoffForm">
+      <div class="signoff-grid">
+        <div class="signoff-field">
+          <span class="signoff-label">Inspector signature</span>
+          <input type="text" id="so-inspector" placeholder="Initials / name">
+        </div>
+        <div class="signoff-field">
+          <span class="signoff-label">Inspector date</span>
+          <input type="text" id="so-insp-date" placeholder="e.g. 15 May 2026">
+        </div>
+        <div class="signoff-field" style="grid-column:1/-1;">
+          <span class="signoff-label">Hygiene Co-ordinator / Manager comments</span>
+          <textarea id="so-mgr-comments" placeholder="Manager comments…"></textarea>
+        </div>
+        <div class="signoff-field">
+          <span class="signoff-label">Manager signature</span>
+          <input type="text" id="so-manager" placeholder="Initials / name">
+        </div>
+        <div class="signoff-field">
+          <span class="signoff-label">Manager date</span>
+          <input type="text" id="so-mgr-date" placeholder="e.g. 18 May 2026">
+        </div>
+      </div>
+      <button class="sign-btn" onclick="signOff()">Sign off inspection</button>
+    </div>
+    <div id="signedDisplay" style="display:none; align-items:center; gap:12px; flex-wrap:wrap;"></div>
+  </div>
+
+  <div class="bottom-row">
+    <div class="doc-ref">Doc Name: Register-09 &nbsp;|&nbsp; Rev no: 02</div>
+    <button class="print-btn" onclick="window.print()">Print / Save PDF</button>
+  </div>
+
+</div>
+
+  <script src="hygiene_facilities_checklist.js"></script>
+
+</body>
+</html>

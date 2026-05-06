@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compressor Register — Taurus Cape Kelp</title>
+    <link rel="stylesheet" href="compressor_checklist.css">
+
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="brand">
+      <div class="brand-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="11" width="18" height="10" rx="2"/>
+          <path d="M7 11V7a5 5 0 0110 0v4"/>
+          <circle cx="12" cy="16" r="1.5" fill="currentColor" stroke="none"/>
+          <line x1="12" y1="11" x2="12" y2="14"/>
+        </svg>
+      </div>
+      <div>
+        <div class="brand-name">Taurus Cape Kelp</div>
+        <div class="brand-sub">Safety Register</div>
+      </div>
+    </div>
+    <div class="doc-title">Compressor Register</div>
+  </div>
+
+  <div class="meta-row">
+    <div class="meta-field"><span class="meta-label">Site / Department</span><input type="text" id="meta-site" placeholder="Enter site or department"></div>
+    <div class="meta-field"><span class="meta-label">Inspector</span><input type="text" id="meta-inspector" placeholder="Inspector name"></div>
+    <div class="meta-field"><span class="meta-label">Year</span><input type="text" id="meta-year" placeholder="2026"></div>
+  </div>
+
+  <div class="legend-toggle-row">
+    <button class="legend-toggle-btn" onclick="toggleLegend()">Show deviation legend</button>
+    <div class="legend-box" id="legendBox">
+      <div class="legend-note">
+        <strong>How to fill in:</strong> Do not tick. Write <strong>OK</strong> or use the deviation number from the legend below.
+        If equipment is defective it must be tagged <strong>"Defective"</strong> and reported to the person responsible.
+        If beyond repair — destroy and discard.
+      </div>
+      <div class="legend-list">
+        <ul>
+          <li><strong>1.</strong> Guard missing or damaged</li>
+          <li><strong>2.</strong> Connections loose</li>
+          <li><strong>3.</strong> Cable badly jointed</li>
+          <li><strong>4.</strong> Cracked or broken insulation</li>
+          <li><strong>5.</strong> Polarity wrong way around</li>
+          <li><strong>6.</strong> Switches not in good order</li>
+          <li><strong>7.</strong> Plug not in good order</li>
+          <li><strong>8.</strong> Earth not connected</li>
+          <li><strong>9.</strong> Cable not properly in plug</li>
+          <li><strong>10.</strong> Vessel Damaged</li>
+          <li><strong>11.</strong> Pressure Gauges not marked</li>
+          <li><strong>12.</strong> Pressure Gauges not in good condition</li>
+          <li><strong>13.</strong> Pressure Test Certificate expired</li>
+          <li><strong>14.</strong> "Scrap" — not economical to repair</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="month-tabs-row" id="monthTabs"></div>
+  <div class="summary-bar" id="summaryBar"></div>
+
+  <div class="section-header">
+    <span class="section-title" id="currentMonthLabel">January checklist</span>
+    <button class="add-btn" onclick="addRow()">+ Add compressor</button>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <colgroup>
+        <col class="col-id"><col class="col-loc">
+        <col class="col-res"><col class="col-dev"><col class="col-del">
+      </colgroup>
+      <thead>
+        <tr>
+          <th>ID No.</th>
+          <th>Location / Type</th>
+          <th class="th-c">Result</th>
+          <th>Deviation</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="itemsBody"></tbody>
+    </table>
+  </div>
+
+  <div class="signoff-box">
+    <div class="signoff-title" id="signoffTitle">Sign off — January</div>
+    <div id="signoffForm">
+      <div class="signoff-grid">
+        <div class="signoff-field"><span class="signoff-label">Date inspected</span><input type="text" id="so-date" placeholder="e.g. 15 Jan 2026"></div>
+        <div class="signoff-field"><span class="signoff-label">Inspector initials</span><input type="text" id="so-inspector" placeholder="Initials / name"></div>
+      </div>
+      <button class="sign-btn" onclick="signOff()">Sign off this month</button>
+    </div>
+    <div id="signedDisplay" style="display:none;align-items:center;gap:12px;flex-wrap:wrap;"></div>
+  </div>
+
+  <div class="bottom-row">
+    <div class="doc-ref">Doc Name: Register-13 &nbsp;|&nbsp; Rev no: 02</div>
+    <button class="print-btn" onclick="window.print()">Print / Save PDF</button>
+  </div>
+</div>
+
+  <script src="compressor_checklist.js"></script>
+
+</body>
+</html>

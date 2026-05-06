@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>First Aid Box Contents Register — Taurus Cape Kelp</title>
+    <link rel="stylesheet" href="firstaid_checklist.css">
+
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="brand">
+      <div class="brand-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="2"/>
+          <line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/>
+        </svg>
+      </div>
+      <div>
+        <div class="brand-name">Taurus Cape Kelp</div>
+        <div class="brand-sub">Safety Register</div>
+      </div>
+    </div>
+    <div class="doc-title">First Aid Box Contents Register</div>
+  </div>
+
+  <div class="meta-row">
+    <div class="meta-field"><span class="meta-label">Area / Site</span><input type="text" id="meta-area" placeholder="Enter area or site"></div>
+    <div class="meta-field"><span class="meta-label">First Aider</span><input type="text" id="meta-aider" placeholder="First aider name"></div>
+    <div class="meta-field"><span class="meta-label">Year</span><input type="text" id="meta-year" placeholder="2026"></div>
+  </div>
+
+  <div class="month-tabs-row" id="monthTabs"></div>
+  <div class="summary-bar" id="summaryBar"></div>
+
+  <div class="section-header">
+    <span class="section-title" id="currentMonthLabel">January checklist</span>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <colgroup><col class="col-num"><col class="col-qty"><col class="col-item"><col class="col-res"><col class="col-note"></colgroup>
+      <thead>
+        <tr>
+          <th>#</th><th>Min. Qty</th><th>Item</th>
+          <th class="th-c">Status</th><th>Notes</th>
+        </tr>
+      </thead>
+      <tbody id="itemsBody"></tbody>
+    </table>
+  </div>
+
+  <div class="signoff-box">
+    <div class="signoff-title" id="signoffTitle">Sign off — January</div>
+    <div id="signoffForm">
+      <div class="signoff-grid">
+        <div class="signoff-field"><span class="signoff-label">Date inspected</span><input type="text" id="so-date" placeholder="e.g. 15 Jan 2026"></div>
+        <div class="signoff-field"><span class="signoff-label">Inspector signature</span><input type="text" id="so-inspector" placeholder="Initials / name"></div>
+        <div class="signoff-field"><span class="signoff-label">Manager signature</span><input type="text" id="so-manager" placeholder="Initials / name"></div>
+      </div>
+      <button class="sign-btn" onclick="signOff()">Sign off this month</button>
+    </div>
+    <div id="signedDisplay" style="display:none;align-items:center;gap:12px;flex-wrap:wrap;"></div>
+  </div>
+
+  <div class="bottom-row">
+    <div class="doc-ref">Doc Name: Register-04 &nbsp;|&nbsp; Rev no: 01</div>
+    <button class="print-btn" onclick="window.print()">Print / Save PDF</button>
+  </div>
+</div>
+
+  <script src="firstaid_checklist.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "name": "Taurus Cape Kelp — Operations Hub",
+  "short_name": "Taurus Ops",
+  "description": "Safety & Operations compliance registers for Taurus Cape Kelp",
+  "start_url": "/taurus-registers/",
+  "scope": "/taurus-registers/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "icons": [
+    {
+      "src": "/taurus-registers/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/taurus-registers/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

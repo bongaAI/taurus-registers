@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="manifest" href="/taurus-registers/manifest.json">
+   <meta name="theme-color" content="#0f172a">
+   <meta name="apple-mobile-web-app-capable" content="yes">
+   <meta name="apple-mobile-web-app-title" content="Taurus Ops">
+   <link rel="apple-touch-icon" href="/taurus-registers/icons/icon-192.png">
+   <script>
+     if ('serviceWorker' in navigator) {
+       window.addEventListener('load', () => {
+         navigator.serviceWorker.register('/taurus-registers/sw.js');
+       });
+     }
+   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Forklift Daily Inspection Register — Taurus Cape Kelp</title>
